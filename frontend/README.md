@@ -1,0 +1,19 @@
+## Frontend Technical Specification
+
+Create a static website that serves an html resume.
+
+## Resume Format Considerations
+
+I am from Colombia, but I'm currently living in the US, where resumes in word/pdf format are recommended to exclude information. eg. Age, Photo, Relationship. 
+
+I'm going to use the Resume that I have used previously. I try to keep this Resume updated and have worked on it with a few experts on the matter. 
+
+### Converting to HTML 
+
+I currently have a pdf version of my Resume, so I'll be utilizing GenAI convert it to HTML as well as work on the CSS formatting. I will be performing manual adjustments when needed.
+
+### Prompt to ChatGPT:
+
+Convert this resume format into html.
+Please don't use a css framework.
+Please use the least amount of css tags

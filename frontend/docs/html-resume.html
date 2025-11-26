@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oscar Gordillo — Resume</title>
+  <style>
+    /* Minimal CSS: only essential selectors */
+    :root { --max-w: 760px; --muted:#555; --accent:#111; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+           margin: 24px; color: var(--accent); line-height:1.45; }
+    .sheet { max-width: var(--max-w); margin: 0 auto; }
+    header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
+    h1 { margin:0; font-size:1.25rem; letter-spacing:0.01em; }
+    .contact { text-align:right; font-size:0.95rem; color:var(--muted); }
+    h2 { margin:20px 0 8px; font-size:1rem; border-bottom:1px solid #eee; padding-bottom:6px; }
+    p.lead { margin:8px 0 14px; color:var(--muted); }
+    .job { margin-bottom:12px; }
+    .job .meta { font-weight:600; font-size:0.95rem; }
+    .job .dates { color:var(--muted); font-size:0.92rem; }
+    ul { margin:6px 0 12px 1.2em; padding:0; }
+    li { margin-bottom:6px; }
+    .skills { display:flex; gap:12px; flex-wrap:wrap; }
+    .skill { background:#f3f3f3; padding:6px 8px; border-radius:6px; font-size:0.92rem; color:var(--muted); }
+    footer { margin-top:18px; font-size:0.9rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    
+    <!-- Header -->
+    <header>
+      <div>
+        <h1>Oscar Gordillo</h1>
+        <p class="lead">Dynamic Senior IT Consultant with experience at BDO Germany, specializing in ITGC audits, WebTrust and SOC engagements. Proven expertise in cybersecurity and data analytics, enhancing control environments and mitigating risks. Adept at fostering client relationships and leading teams, delivering high-quality results under pressure while ensuring compliance with regulatory standards.</p>
+      </div>
+
+      <div class="contact" aria-label="contact">
+        <div>oscar_andres16@hotmail.com</div>
+        <div><a href="https://www.linkedin.com/in/oscar-gordillot/" target="_blank" rel="noopener">www.linkedin.com/in/oscar-gordillot/</a></div>
+      </div>
+    </header>
+
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <article class="job" aria-labelledby="job1">
+        <div class="meta" id="job1">IT Senior Consultant — BDO Germany</div>
+        <div class="dates">October 2024 – Present</div>
+        <ul>
+          <li>Conducted ITGC audits covering key domains such as access management, change control, and IT operations for clients subject to SOX 404 and financial statement audits.</li>
+          <li>Performed SOC 1 and SOC 2 Type II engagements assessing design and operating effectiveness of internal controls in accordance with AICPA standards.</li>
+          <li>Evaluated general IT controls across enterprise systems (e.g., SAP, Active Directory) and supported integrated audits under PCAOB and international auditing standards.</li>
+          <li>Collaborated with client IT and compliance teams to identify control gaps, assess risks, and recommend practical remediation plans.</li>
+          <li>Documented testing results and prepared detailed audit reports and workpapers aligned with firm methodology and regulatory standards.</li>
+        </ul>
+      </article>
+
+      <article class="job" aria-labelledby="job2">
+        <div class="meta" id="job2">Senior Audit Associate — BDO US</div>
+        <div class="dates">June 2021 – June 2024</div>
+        <ul>
+          <li>Managed end-to-end audit processes including planning, risk assessments, testing, and reporting under tight deadlines.</li>
+          <li>Led and executed SOC 2 and WebTrust assurance engagements for clients in technology, financial services, and e-commerce.</li>
+          <li>Supervised and trained junior audit staff and interns on assessing SOC/WebTrust controls.</li>
+          <li>Maintained strong client relationships to deliver exceptional service and secure repeat business.</li>
+          <li>Prepared clear audit documentation and deliverables, including SOC and WebTrust reports for client and regulatory review.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <p><strong>M.S. in Information Systems</strong> — University of Missouri - St. Louis, MO, May 2021<br>
+         With a Business Intelligence certificate</p>
+
+      <p><strong>B.A. in International Business</strong> — University of Missouri - St. Louis, MO, May 2019</p>
+    </section>
+
+    <!-- Skills and Abilities -->
+    <section>
+      <h2>Skills & Abilities</h2>
+      <div class="skills" role="list">
+        <span class="skill" role="listitem">Data Analytics</span>
+        <span class="skill" role="listitem">Cybersecurity</span>
+        <span class="skill" role="listitem">Machine Learning</span>
+        <span class="skill" role="listitem">Cloud Computing</span>
+        <span class="skill" role="listitem">System Architecture Analysis</span>
+        <span class="skill" role="listitem">IT Service Management</span>
+      </div>
+    </section>
+
+    <footer>
+      <small>Converted from uploaded file: Resume.pdf. Source content referenced. :contentReference[oaicite:1]{index=1}</small>
+    </footer>
+  </div>
+</body>
+</html>
