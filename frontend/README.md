@@ -14,9 +14,28 @@ I currently have a pdf version of my Resume, so I'll be utilizing GenAI convert 
 
 ### Prompt to ChatGPT:
 
-Convert this resume format into html.
+``Convert this resume format into html.
 Please don't use a css framework.
-Please use the least amount of css tags
+Please use the least amount of css tags``
+
+### Serve Static Website Locally
+
+To serve our static website locally, we need to use stylesheets externally from our HTML page in a Cloud Developer Enviroment (CDE).
+
+This is not necessary with local development. Assuming we have node install we'll use the simple web-server http-server. 
+
+#### Install HTTP Server
+
+npm i http-server -g
+
+![link](https://www.npmjs.com/package/http-server)
+
+### Server Website
+
+http-server will server a public folder by default where the command is run. In this case, I use npx since we are running it on a Mac and did not want to create the additional folders. 
+
+``cd frontend
+npx http-server``
 
 ## Utilize Lovable for design ideas
 
