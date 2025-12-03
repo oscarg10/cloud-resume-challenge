@@ -26,6 +26,6 @@ I use Lovable for design ideas. It generated a complete website with a modern lo
 
 This was the output
 
-![Screenshot](./assets/lovable_output.png)
+![Screenshot](./public/assets/lovable_output.png)
 
 
