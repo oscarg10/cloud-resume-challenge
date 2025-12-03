@@ -28,7 +28,7 @@ This is not necessary with local development. Assuming we have node install we'l
 
 npm i http-server -g
 
-![link](https://www.npmjs.com/package/http-server)
+https://www.npmjs.com/package/http-server
 
 ### Server Website
 
