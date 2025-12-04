@@ -1,11 +1,12 @@
 :root {
-    --max-w: 760px;
+    --max-w: 1080px;
     --muted: #aaa;
     --accent: #fff;
     --bg: #0e0e0f;
     --card: #2b2e2e;
     --border: #2a2a2d;
     --accent-color: #4ea4ff;
+    --hover-color: #3a3a3a;
   }
 
 
@@ -21,6 +22,7 @@
   .sheet {
     max-width: var(--max-w);
     margin: 0 auto;
+    margin-top: 16px;
   }
   
   /* Header */
@@ -55,6 +57,39 @@
     text-decoration: underline;
   }
   
+  /* Navigation Buttons */
+
+  nav {
+    background-color: var(--card);
+    border-bottom: 1px solid var(--card);
+    height: 58px; 
+    padding: 0 16px; 
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  nav .home-li{
+    margin-right: auto;
+  }
+
+  nav a{
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    padding: 1em 2em;
+  }
+
+  nav a:hover{
+    background-color: var(--hover-color);
+  }
+
+  nav a.active-link{
+    border-bottom: 2px solid var(--accent);
+  }
+
   /* Section Titles */
   h2 {
     margin: 24px 0 10px;
@@ -69,7 +104,7 @@
   p.lead {
     margin: 12px 0 18px;
     color: var(--muted);
-    max-width: 650px;
+    max-width: 810px;
   }
   
   /* Job Cards */
