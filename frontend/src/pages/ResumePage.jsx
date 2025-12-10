@@ -1,108 +1,20 @@
 import React from "react";
+import 'css/pages/resume.css'
+
+import resumeData from 'data/resumeData'
+import ResumeHeader from 'comps/resume/ResumeHeader'
+import ResumeSection from 'comps/resume/ResumeSection'
 
 export default function ResumePage() {
+  
+
   return (
     <>
-      <div className="sheet">
-
-        {/* New centered header */}
-        <header>
-          <h1>Oscar Gordillo</h1>
-
-          <div className="contact">
-            <div>oscar_andres16@hotmail.com</div>
-            <div>
-              <a href="https://www.linkedin.com/in/oscar-gordillot/" target="_blank" rel="noopener">
-                www.linkedin.com/in/oscar-gordillot/
-              </a>
-            </div>
-          </div>
-
-          <p className="lead">
-            Dynamic Senior IT Consultant with experience in multiple countries, specializing in WebTrust for CAs,
-            SOC engagements, and ITGC audits. Proven expertise in cybersecurity and data analytics, enhancing control
-            environments and mitigating risks. Adept at fostering client relationships and leading teams, delivering
-            high-quality results under pressure while ensuring compliance with regulatory standards.
-          </p>
-        </header>
-
-        {/* Experience */}
-        <section>
-          <h2>Experience</h2>
-
-          <article className="job" aria-labelledby="job1">
-            <div className="meta" id="job1">IT Senior Consultant — BDO Germany</div>
-            <div className="dates">October 2024 – Present</div>
-            <ul>
-              <li>Conducted ITGC audits covering key domains such as access management, change control, and IT operations for clients subject to SOX 404 and financial statement audits.</li>
-              <li>Performed SOC 1 and SOC 2 Type II engagements assessing design and operating effectiveness of internal controls in accordance with AICPA standards.</li>
-              <li>Evaluated general IT controls across enterprise systems (e.g., SAP, Active Directory) and supported integrated audits under PCAOB and international auditing standards.</li>
-              <li>Collaborated with client IT and compliance teams to identify control gaps, assess risks, and recommend practical remediation plans.</li>
-              <li>Documented testing results and prepared detailed audit reports and workpapers aligned with firm methodology and regulatory standards.</li>
-            </ul>
-          </article>
-
-          <article className="job" aria-labelledby="job2">
-            <div className="meta" id="job2">Senior Audit Associate — BDO US</div>
-            <div className="dates">June 2021 – June 2024</div>
-            <ul>
-              <li>Managed end-to-end audit processes including planning, risk assessments, testing, and reporting under tight deadlines.</li>
-              <li>Led and executed SOC 2 and WebTrust assurance engagements for clients in technology, financial services, and e-commerce.</li>
-              <li>Supervised and trained junior audit staff and interns on assessing SOC/WebTrust controls.</li>
-              <li>Maintained strong client relationships to deliver exceptional service and secure repeat business.</li>
-              <li>Prepared clear audit documentation and deliverables, including SOC and WebTrust reports for client and regulatory review.</li>
-            </ul>
-          </article>
-        </section>
-
-        {/* Personal Projects */}
-        <section>
-          <h2>Personal Projects</h2>
-
-          <div className="job">
-            <div className="meta">AI-Powered Resume Builder</div>
-            <div className="dates">2024 — Present</div>
-            <ul>
-              <li>Developed a lightweight web app that generates resumes using HTML/CSS templates and user-provided data.</li>
-              <li>Implemented template switching, export-to-PDF, and mobile-friendly UI.</li>
-              <li>Built with vanilla JavaScript, no frameworks, optimized for speed and simplicity.</li>
-            </ul>
-          </div>
-
-          <div className="job">
-            <div className="meta">Luck in Football</div>
-            <div className="dates">2025</div>
-            <ul>
-              <li>Built a full Python data pipeline using APIs, pandas, and automation loops to collect, clean, and structure large-scale football datasets.</li>
-              <li>Integrated external sports-data APIs, handling authentication, pagination, rate limits, and error logging to ensure reliable data ingestion.</li>
-              <li>Performed exploratory data analysis and visualization using pandas and matplotlib to uncover trends in player demographics and birth distributions.</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Education */}
-        <section>
-          <h2>Education</h2>
-          <p><strong>M.S. in Information Systems</strong> — University of Missouri - St. Louis, MO, May 2021<br />
-            with a Business Intelligence certificate</p>
-
-          <p><strong>B.A. in International Business</strong> — University of Missouri - St. Louis, MO, May 2019</p>
-        </section>
-
-        {/* Skills & Abilities */}
-        <section>
-          <h2>Skills & Abilities</h2>
-          <div className="skills" role="list">
-            <span className="skill" role="listitem">Data Analytics</span>
-            <span className="skill" role="listitem">Cybersecurity</span>
-            <span className="skill" role="listitem">Machine Learning</span>
-            <span className="skill" role="listitem">Cloud Computing</span>
-            <span className="skill" role="listitem">System Architecture Analysis</span>
-            <span className="skill" role="listitem">IT Service Management</span>
-          </div>
-        </section>
-
-      </div>
-    </>
-  );
+      <ResumeHeader person={resumeData.person}></ResumeHeader>
+      <ResumeSection title='Summary' handle='summary' section={resumeData.sections.summary} />
+      <ResumeSection title='Experience' handle='experience' section={resumeData.sections.experience} />
+      <ResumeSection title='Personal Projects' handle='projects' section={resumeData.sections.projects} />
+      <ResumeSection title='Education' handle='education' section={resumeData.sections.education} />
+      <ResumeSection title='Skills & Abilities' handle='skills' section={resumeData.sections.skills_abilities} />
+    </>);
 }

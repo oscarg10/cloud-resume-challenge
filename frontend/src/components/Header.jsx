@@ -1,15 +1,16 @@
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 export default function Header() {
-    return (
-      <header>
-        <nav>
-          <a href="/">Home</a>
-          <a className="active" href="/resume.html">
-            Resume
-          </a>
-          <a href="/projects.html">Projects</a>
-        </nav>
-      </header>
-    );
-  }
+  return (
+    <header>
+      <nav>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/resume">Résumé</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+
+
+      </nav>
+    </header>
+  );
+}
