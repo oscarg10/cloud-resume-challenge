@@ -17,14 +17,8 @@ import ResumeSectionItem from 'comps/resume/ResumeSectionItem'
 //   );
 // }
 
-console.log("ResumeSectionItem is:", ResumeSectionItem);
 export default function ResumeSection(props) {
   const { section, title, handle } = props;
-
-  if (!Array.isArray(section)) {
-    console.error("ResumeSection ERROR: `section` is not an array:", section);
-    return null;
-  }
 
   return (
     <section className={handle}>

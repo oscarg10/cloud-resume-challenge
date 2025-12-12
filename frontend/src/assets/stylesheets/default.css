@@ -10,29 +10,26 @@
   }
 
 
-  /* Base */
-  body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    margin: 24px;
-    color: var(--accent);
-    background: var(--bg);
-    line-height: 1.5;
-  }
-  
-  .sheet {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    margin-top: 16px;
-  }
-  
-  /* Header */
-  header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+/* Base */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  color: var(--accent);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.sheet {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  margin-bottom: 20px;
+}
   
   h1 {
     margin: 0;
@@ -57,39 +54,41 @@
     text-decoration: underline;
   }
   
-  /* Navigation Buttons */
+/* Navigation Buttons */
+nav {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--card);
+  height: 58px; 
+  padding: 0 24px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Home on left, nav-right on right */
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  nav {
-    background-color: var(--card);
-    border-bottom: 1px solid var(--card);
-    height: 58px; 
-    padding: 0 16px; 
-  }
+nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;  /* No gap between Resume and Projects */
+}
 
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
+nav a{
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  height: 100%;
+}
 
-  nav .home-li{
-    margin-right: auto;
-  }
+nav a:hover{
+  background-color: var(--hover-color);
+}
 
-  nav a{
-    color: var(--accent);
-    text-decoration: none;
-    display: flex;
-    padding: 1em 2em;
-  }
-
-  nav a:hover{
-    background-color: var(--hover-color);
-  }
-
-  nav a.active-link{
-    border-bottom: 2px solid var(--accent);
-  }
-
+nav a.active-link{
+  border-bottom: 2px solid var(--accent);
+}
   /* Section Titles */
   h2 {
     margin: 24px 0 10px;

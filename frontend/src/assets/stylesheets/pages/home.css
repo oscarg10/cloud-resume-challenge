@@ -1,5 +1,12 @@
+.profile_picture {
+  text-align: center;
+  margin: 20px 0;
+}
+
 .profile_picture img {
-    width: 150px;
-    height: auto;
-  }
-  
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;  /* Centers the image */
+  border-radius: 50%;  /* Optional: makes it circular */
+}

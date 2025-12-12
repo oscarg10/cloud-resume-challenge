@@ -90,7 +90,7 @@ const resumeData = {
         }
       ],
   
-      skills_interests: [
+      skills_abilities: [
         {
           id: 8,
           title: "Skills & Abilities",

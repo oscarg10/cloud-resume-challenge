@@ -1,15 +1,15 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 export default function Header() {
   return (
     <header>
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/resume">Resume</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-
-
+        <div className="nav-right">
+          <NavLink to="/resume">Resume</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+        </div>
       </nav>
     </header>
   );

@@ -5,14 +5,22 @@ export default function ResumeHeader(props) {
   const contact = props.person.contact;
   return (
     <section className="header">
-    <h1>{ person.name }</h1>
-    <p>
-        <span className="address" dangerouslySetInnerHTML={{ __html: contact.address }} />
-        <span className="bull">&bull;</span>
-        <span className="email"><a href="mailto:{contact.email}">{contact.email}</a></span>
-        <span className="bull">&bull;</span>
-        <span className="phone">{contact.phone}</span>
-    </p>
+      <h1>{person.name}</h1>
+      <p>
+        <span className="email">
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </span>
+        {contact.linkedin && (
+          <>
+            <span className="bull">&bull;</span>
+            <span className="linkedin">
+              <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+                {contact.linkedin.replace(/^https?:\/\//, '')}
+              </a>
+            </span>
+          </>
+        )}
+      </p>
     </section>
   );
 }
