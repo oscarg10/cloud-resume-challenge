@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from './Layout.jsx'
-import HomePage from 'pages/HomePage'
-import ResumePage from 'pages/ResumePage'
-import ProjectsPage from 'pages/ProjectsPage'
-import ProjectPage from 'pages/ProjectPage'
+import HomePage from 'pages/HomePage.jsx'
+import ResumePage from 'pages/ResumePage.jsx'
+import ProjectsPage from 'pages/ProjectsPage.jsx'
+import ProjectPage from 'pages/ProjectPage.jsx'
 
 createRoot(document.querySelector('main')).render(
   <BrowserRouter>
