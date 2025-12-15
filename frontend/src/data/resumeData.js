@@ -3,7 +3,8 @@ const resumeData = {
       name: "Oscar Gordillo",
       contact: {
         email: "oscar_andres16@hotmail.com",
-        linkedin: "https://www.linkedin.com/in/oscar-gordillot/"
+        linkedin: "https://www.linkedin.com/in/oscar-gordillot/",
+        github: "https://github.com/oscarg10" 
       }
     },
   

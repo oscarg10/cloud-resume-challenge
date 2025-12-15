@@ -62,7 +62,7 @@ nav {
   padding: 0 24px; 
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* Home on left, nav-right on right */
+  justify-content: space-between;  /*Home on left, nav-right on right */
   width: 100%;
   box-sizing: border-box;
 }
@@ -80,6 +80,7 @@ nav a{
   align-items: center;
   padding: 1em 2em;
   height: 100%;
+  box-sizing: border-box;
 }
 
 nav a:hover{
