@@ -9,6 +9,7 @@ export default function Header() {
         <div className="nav-right">
           <NavLink to="/resume">Resume</NavLink>
           <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
         </div>
       </nav>
     </header>

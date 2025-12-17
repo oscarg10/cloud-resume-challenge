@@ -7,6 +7,8 @@ import HomePage from 'pages/HomePage.jsx'
 import ResumePage from 'pages/ResumePage.jsx'
 import ProjectsPage from 'pages/ProjectsPage.jsx'
 import ProjectPage from 'pages/ProjectPage.jsx'
+import PostPage from 'pages/PostPage.jsx'
+import BlogPage from 'pages/BlogPage.jsx'
 
 createRoot(document.querySelector('main')).render(
   <BrowserRouter>
@@ -16,6 +18,8 @@ createRoot(document.querySelector('main')).render(
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:handle" element={<ProjectPage />} />
+        <Route path="/blog" element={<BlogPage />} />          
+        <Route path="/blog/:handle" element={<PostPage />} />
       </Route>
     </Routes>
   </BrowserRouter>)
