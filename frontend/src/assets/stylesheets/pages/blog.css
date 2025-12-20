@@ -1,23 +1,48 @@
 .posts {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    .post_item {
-      display: flex;
-      flex-direction: row;
-      color: rgb(0,0,0);
-      text-decoration: none;
-      gap: 8px;
-      .name {
-        order: 2;
-        font-weight: 600;
-      }
-      .date {
-        order: 1;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    }
-  } 
+.post_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: var(--card);
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  gap: 16px;
+}
+
+.post_item .name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+  flex: 1;
+}
+
+.post_item .date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.post_item:hover {
+  background-color: var(--hover-color);
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+.post_item:hover .name {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+  text-underline-offset: 4px;
+}

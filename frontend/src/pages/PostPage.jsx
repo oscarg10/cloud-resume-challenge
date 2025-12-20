@@ -9,14 +9,19 @@ export default function PostPage() {
   const { handle, date } = useParams();
 
   const post = blogData.find(p => p.handle === handle);
+
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+  
   return (
     <>
-      <NavLink className="bttn l-icon" to={`/`}>
+      <NavLink className="bttn l-icon" to={`/blog`}>
         <ChevronLeft />
-        Back to Home Page
+        Back to all posts
       </NavLink>
       <h1>{post.name}</h1>
-      <div className="date">{post.date}</div>
+      <div className="date">{date || post.date}</div>
       <div className="markdown" dangerouslySetInnerHTML={{ __html: post.body_html }} />
     </>
   )

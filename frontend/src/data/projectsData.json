@@ -2,14 +2,14 @@
   {
     "name": "German Learning App",
     "handle": "german-learning-app",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum neque eget elit ullamcorper, eu consectetur augue facilisis. Nunc pellentesque lectus ac elit faucibus eleifend. Donec ac risus at orci mollis blandit. Aenean rhoncus facilisis neque, posuere viverra sapien scelerisque sit amet. Nullam eu laoreet dolor, id egestas massa.",
+    "description": "As its name implies, the 'German Learning App' is an interactive language-learning platform designed to help users practice German through structured exercises and intuitive feedback.",
     "thumbnail": "https://placehold.co/320x200",
     "body_html": "<h1>German Learning App</h1>\n<p>The <strong>German Learning App</strong> is an interactive language-learning platform designed to help users practice German through structured exercises and intuitive feedback.</p>\n<h2>What it does</h2>\n<ul>\n<li>Provides sentence-based translation and transcription exercises  </li>\n<li>Supports progressive difficulty levels  </li>\n<li>Designed for extensibility with AI-driven features  </li>\n<li>Clean, user-friendly interface for daily practice  </li>\n</ul>\n<h2>Example Code</h2>\n<p>```javascript\nfunction checkAnswer(userInput, correctAnswer) {\n  return userInput.trim() === correctAnswer;\n}</p>"
   },
   {
     "name": "Luck in Football",
     "handle": "luck-in-football",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum neque eget elit ullamcorper, eu consectetur augue facilisis. Nunc pellentesque lectus ac elit faucibus eleifend. Donec ac risus at orci mollis blandit. Aenean rhoncus facilisis neque, posuere viverra sapien scelerisque sit amet. Nullam eu laoreet dolor, id egestas massa.",
+    "description": "Luck in Football</strong> The 'Luck in Football' is a data analytics project focused on exploring randomness, variance, and performance outcomes in football using automated data pipelines and statistical analysis.",
     "thumbnail": "https://placehold.co/320x200",
     "body_html": "<h1>Luck in Football</h1>\n<p><strong>Luck in Football</strong> is a data analytics project focused on exploring randomness, variance, and performance outcomes in football using automated data pipelines and statistical analysis.</p>\n<h2>What it does</h2>\n<ul>\n<li>Ingests large football datasets via APIs  </li>\n<li>Automates data cleaning and processing  </li>\n<li>Performs exploratory data analysis and visualization  </li>\n<li>Highlights patterns related to luck vs. performance  </li>\n</ul>\n<h2>Example Code</h2>\n<p>```python\nimport pandas as pd</p>\n<p>df = pd.read_csv(\"matches.csv\")\nprint(df.describe())</p>"
   }

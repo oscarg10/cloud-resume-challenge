@@ -19,7 +19,7 @@ createRoot(document.querySelector('main')).render(
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:handle" element={<ProjectPage />} />
         <Route path="/blog" element={<BlogPage />} />          
-        <Route path="/blog/:handle" element={<PostPage />} />
+        <Route path="/blog/:date/:handle" element={<PostPage />} />
       </Route>
     </Routes>
   </BrowserRouter>)

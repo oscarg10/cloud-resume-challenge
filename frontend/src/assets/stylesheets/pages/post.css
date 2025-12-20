@@ -5,3 +5,8 @@ body[location='blog_post'] {
       color: rgb(160,160,160);
     }
   }
+
+  .posts h2 {
+    font-size: 1.5rem;
+    color: rgb(90, 96, 151);
+  }

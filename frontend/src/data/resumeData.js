@@ -20,7 +20,6 @@ const resumeData = {
         {
           id: 2,
           title: "IT Senior Consultant — BDO Germany",
-          subtitle: "ITGC, SOC, and cybersecurity assurance",
           location: "Germany",
           duration: "October 2024 – Present",
           details: [
@@ -34,7 +33,6 @@ const resumeData = {
         {
           id: 3,
           title: "Senior Audit Associate — BDO US",
-          subtitle: "SOC & WebTrust assurance, audit execution",
           location: "United States",
           duration: "June 2021 – June 2024",
           details: [
@@ -51,7 +49,6 @@ const resumeData = {
         {
           id: 4,
           title: "AI-Powered Resume Builder",
-          subtitle: "Lightweight resume generator web app",
           location: "Online",
           duration: "2024 — Present",
           details: [
@@ -63,7 +60,6 @@ const resumeData = {
         {
           id: 5,
           title: "Luck in Football",
-          subtitle: "Football analytics with automated data pipelines",
           location: "Online",
           duration: "2025",
           details: [

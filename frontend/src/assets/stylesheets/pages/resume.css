@@ -7,6 +7,7 @@ section.header {
   section.header h1 {
     text-align: center;
     margin-bottom: 12px;
+    font-size: 3rem;
   }
   
   section.header p {
@@ -20,6 +21,11 @@ section.header {
     margin: 0 auto;
   }
 
+  section.header p a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
   section.summary,
   section.experience,
   section.projects,
@@ -29,19 +35,21 @@ section.header {
     margin-bottom: 32px;
   }
 
+
 /* Section Titles */
-    section.summary h2,
-    section.experience h2,
-    section.projects h2,
-    section.education h2,
-    section.skills h2 {
-    margin: 24px 0 10px;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
-    color: var(--accent-color);
-    font-weight: 600;
-  }
+section.summary h2,
+section.experience h2,
+section.projects h2,
+section.education h2,
+section.skills h2 {
+  margin: 24px 0 10px;
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-align: center;
+}
 
   /* Center section items */
 section.summary .items,
@@ -53,8 +61,90 @@ section.skills .items {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  text-align: center;
+  width: 100%;
 }
-  
+
+/* Add consistent width for all items */
+section.summary .item,
+section.experience .item,
+section.projects .item,
+section.education .item,
+section.skills .item {
+  text-align: left;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section.summary .item p,
+section.experience .item p,
+section.projects .item p,
+section.education .item p,
+section.skills .item p {
+  text-align: center;
+}
+
+section.summary .item_heading,
+section.experience .item_heading,
+section.projects .item_heading,
+section.education .item_heading,
+section.skills .item_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;  /* Aligns title with location/duration on same baseline */
+  gap: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+section.summary .item_heading .info,
+section.experience .item_heading .info,
+section.projects .item_heading .info,
+section.education .item_heading .info,
+section.skills .item_heading .info {
+  text-align: left;
+  flex: 1;
+}
+
+section.summary .item_heading .info p,
+section.experience .item_heading .info p,
+section.projects .item_heading .info p,
+section.education .item_heading .info p,
+section.skills .item_heading .info p {
+  text-align: left;
+  margin: 0;
+}
+
+section.summary .item_heading .details,
+section.experience .item_heading .details,
+section.projects .item_heading .details,
+section.education .item_heading .details,
+section.skills .item_heading .details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 24px;  /* Consistent spacing from info */
+}
+
+
+section.summary .item_heading .details .location,
+section.experience .item_heading .details .location,
+section.projects .item_heading .details .location,
+section.education .item_heading .details .location,
+section.skills .item_heading .details .location,
+section.summary .item_heading .details .duration,
+section.experience .item_heading .details .duration,
+section.projects .item_heading .details .duration,
+section.education .item_heading .details .duration,
+section.skills .item_heading .details .duration {
+  text-align: right;
+  white-space: nowrap;
+}
   /* Lead Paragraph */
   p.lead {
     margin: 12px 0 18px;
@@ -95,19 +185,55 @@ section.skills .items {
     margin-bottom: 6px;
   }
   
-  /* Skills */
-  .skills {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+
+/* Skills section specific styles */
+
+section.skills {
+    text-align: center;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+section.skills .item_heading {
+    display: none;  /* Hide the heading for skills */
   }
   
-  .skill {
+  section.skills .item {
+    text-align: center;
+  }
+
+  section.skills h2 {
+    text-align: center !important;
+    margin: 24px auto 10px auto;
+    display: block;
+    width: 100%;
+  }
+
+  section.skills .item_heading .info h3 {
+    display: none;  /* Explicitly hide the h3 title */
+  }
+  section.skills .item ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+  
+  section.skills .item ul li {
     background: var(--card);
-    padding: 6px 10px;
+    padding: 8px 16px;
     border-radius: 8px;
     font-size: 0.9rem;
     color: var(--accent);
     border: 1px solid var(--border);
+    margin: 0;
+  }
+  
+  /* Hide empty location/duration */
+  section.skills .item_heading .details .location:empty,
+  section.skills .item_heading .details .duration:empty {
+    display: none;
   }
