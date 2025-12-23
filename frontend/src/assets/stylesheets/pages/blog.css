@@ -6,6 +6,11 @@
   margin: 0 auto;
 }
 
+.content h1{
+  align-self: center;
+  text-align: center;
+}
+
 .post_item {
   display: flex;
   flex-direction: row;

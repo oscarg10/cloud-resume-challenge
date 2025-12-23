@@ -1,5 +1,5 @@
 import React from "react";
-import 'css/pages/home.css'
+import 'css/pages/blog.css'
 import blogData from 'data/blogData.json'
 import PostItem from 'comps/PostItem'
 
