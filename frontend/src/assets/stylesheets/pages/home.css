@@ -154,3 +154,27 @@
     width: 180px;
   }
 }
+
+.visitor-counter {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.visitor-label {
+  color: var(--muted);
+}
+
+.visitor-number {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .visitor-counter {
+    margin-top: 32px;
+    font-size: 0.85rem;
+  }
+}

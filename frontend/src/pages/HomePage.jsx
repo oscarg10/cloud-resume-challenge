@@ -1,16 +1,3 @@
-// import React from "react";
-// import 'css/pages/home.css'
-// import oscar_gordillo from 'images/oscar-gordillo.jpg'
-
-// export default function HomePage() {
-//   return (
-//     <>
-//         <div className="profile_picture">
-//           <img src={oscar_gordillo} />
-//         </div>
-//     </>
-//   )
-// }
 
 import React from "react";
 import 'css/pages/home.css'
@@ -18,6 +5,7 @@ import oscar_gordillo from 'images/oscar-gordillo.jpg'
 import resumeData from 'data/resumeData'
 import { Mail } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import VisitorCounter from 'comps/VisitorCounter'
 
 export default function HomePage() {
   const person = resumeData.person;
@@ -32,11 +20,9 @@ export default function HomePage() {
         <h1 className="home-name">{person.name}</h1>
         <p className="home-description">{description}</p>
       </div>
-      
       <div className="profile_picture">
         <img src={oscar_gordillo} alt={person.name} />
       </div>
-      
       <div className="contact-buttons">
         {contact.email && (
           <a 
@@ -73,6 +59,7 @@ export default function HomePage() {
           </a>
         )}
       </div>
+      <VisitorCounter />
     </div>
   )
 }
