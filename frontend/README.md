@@ -48,3 +48,31 @@ This was the output
 ![Screenshot](./public/assets/lovable_output.png)
 
 
+## Project Overview
+
+A modern, responsive portfolio website built with React and Vite, featuring a resume, project showcase, and a blog. The site displays professional experience, personal projects, and blog posts in a clean, dark-themed interface.
+
+## Tech Stack
+
+- **Framework:** React 19.1.1
+- **Build Tool:** Vite (rolldown-vite)
+- **Routing:** React Router v7
+- **Icons:** Lucide React, React Icons
+- **Styling:** CSS with PostCSS (custom media queries, nesting)
+- **Data:** JSON files generated from markdown (via backend)
+
+## Installation
+
+ash
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
