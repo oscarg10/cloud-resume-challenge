@@ -7,7 +7,8 @@
     template_path: "{{ (playbook_dir, '..', 'template.yaml') | path_join | realpath }}"
     parameters_file: "{{ (playbook_dir, '..', 'vars', 'parameters.yml') | path_join | realpath }}"
     cfn_parameters:
-      BucketName: 'www.oscargresume.it.com'
+      BucketName: 'oscargresume.it.com'
+      ACMCertificateArn: 'arn:aws:acm:us-east-1:595588091959:certificate/c8b71f92-206c-4dd9-a483-8bb0c8d69600'
   vars_files:
     - vaults/prod.yml
   tasks:
