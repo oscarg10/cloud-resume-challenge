@@ -10,7 +10,7 @@
     project_root: "{{ playbook_dir | realpath }}/../.."
     frontend_dir: "{{ project_root }}/frontend"
     build_dir: "{{ frontend_dir }}/dist"
-    cloudfront_distribution_id: EO8BXLGD30032
+    cloudfront_distribution_id: E2GYPIYX55MTGO
   tasks:
     - name: Install Node dependencies (clean, reproducible)
       community.general.npm:
@@ -20,7 +20,7 @@
         ci: true
 
     - name: Build Vite app
-      shell: npm run build
+      shell: npm run build_aws
       args:
         chdir: "{{ frontend_dir }}"
 
@@ -43,7 +43,8 @@
         file_root: "{{ build_dir }}"
         include: "assets/**"
         delete: true
-      register: sync_assets
+
+      register: sync_result
 
     - name: Upload index.html with no-store (SPA routing)
       amazon.aws.s3_object:

@@ -1,0 +1,121 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Simple counter API (Python + DynamoDB + HTTP API)
+
+Parameters:
+  TableName:
+    Type: String
+    Default: CounterTable
+    Description: DynamoDB table name for the counter
+  CounterPrimaryKeyValue:
+    Type: String
+    Default: global
+    Description: The partition key value used for the single counter item
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 10
+    MemorySize: 256
+    Architectures: [x86_64]
+    Tracing: Active
+    Environment:
+      Variables:
+        TABLE_NAME: !Ref CounterTable
+        COUNTER_PK: !Ref CounterPrimaryKeyValue
+
+Resources:
+  Api:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins:
+          - https://www.oscargresume.it.com
+        AllowHeaders:
+          - '*'
+        AllowMethods:
+          - GET
+          - POST
+          - OPTIONS
+        MaxAge: 300
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 5
+        ThrottlingRateLimit: 10
+
+  ApiDomain:
+    Type: AWS::ApiGatewayV2::DomainName
+    Properties:
+      DomainName: api-counter.oscargresume.it.com
+      DomainNameConfigurations:
+        - CertificateArn: arn:aws:acm:us-east-1:595588091959:certificate/61db5f6a-3ade-4df7-8f2c-b3205f90b50b
+          EndpointType: REGIONAL
+          SecurityPolicy: TLS_1_2
+
+  ApiDomainMapping:
+    Type: AWS::ApiGatewayV2::ApiMapping
+    DependsOn: ApiDomain
+    Properties:
+      ApiId: !Ref Api
+      DomainName: !Ref ApiDomain
+      Stage: $default
+
+  CounterTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TableName
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+      SSESpecification:
+        SSEEnabled: true
+
+  CounterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: app.lambda_handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref CounterTable
+      Events:
+        GetCounter:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref Api
+            Path: /counter
+            Method: GET
+        IncrementCounter:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref Api
+            Path: /counter
+            Method: POST
+
+Outputs:
+  ApiEndpoint:
+    Description: Base URL for the HTTP API (default endpoint)
+    Value: !Sub 'https://${Api}.execute-api.${AWS::Region}.amazonaws.com'
+  
+  ApiDomainTarget:
+    Description: Target domain for DNS CNAME record
+    Value: !GetAtt ApiDomain.RegionalDomainName
+  
+  ApiDomainHostedZoneId:
+    Description: Hosted zone ID for DNS A record (if using alias)
+    Value: !GetAtt ApiDomain.RegionalHostedZoneId
+  
+  ApiCustomDomain:
+    Description: Custom domain URL for the API
+    Value: !Sub 'https://${ApiDomain}'
+  
+  TableOut:
+    Description: DynamoDB table name
+    Value: !Ref CounterTable
+  
+  FunctionArn:
+    Description: Lambda function ARN
+    Value: !GetAtt CounterFunction.Arn

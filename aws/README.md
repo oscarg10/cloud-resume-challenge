@@ -25,7 +25,7 @@ The infrastructure consists of:
 3. **Route 53 Hosted Zone** created for your domain
 4. **ACM Certificate** in `us-east-1` region covering:
    - `oscargresume.it.com`
-   - `www.oscargresume.it.com`
+   - `*.oscargresume.it.com`
    - Status must be `ISSUED` (not `PENDING_VALIDATION`)
 
 ### Requesting ACM Certificate

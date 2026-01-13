@@ -117,3 +117,21 @@ Resources:
           SslSupportMethod: sni-only
           MinimumProtocolVersion: TLSv1.2_2021
         HttpVersion: http2and3
+  Outputs:
+  CloudFrontDistributionId:
+    Description: CloudFront Distribution ID for the www domain
+    Value: !Ref CloudFrontDistribution
+    Export:
+      Name: !Sub '${AWS::StackName}-CloudFrontDistributionId'
+
+  CloudFrontDomainName:
+    Description: CloudFront Distribution Domain Name
+    Value: !GetAtt CloudFrontDistribution.DomainName
+    Export:
+      Name: !Sub '${AWS::StackName}-CloudFrontDomainName'
+
+  RedirectCloudFrontDistributionId:
+    Description: CloudFront Distribution ID for the apex domain redirect
+    Value: !Ref RedirectCloudFrontDistribution
+    Export:
+      Name: !Sub '${AWS::StackName}-RedirectCloudFrontDistributionId'
