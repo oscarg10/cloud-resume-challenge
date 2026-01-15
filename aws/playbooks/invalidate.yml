@@ -5,23 +5,29 @@
   vars_files:
     - vaults/prod.yml
   tasks:
-    - name: Get CloudFront Distribution ID from stack outputs
-      amazon.aws.cloudformation_info:
-        aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
-        aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
-        region: "{{ AWS_REGION }}"
-        stack_name: "{{ STACK_NAME }}"
-      register: stack_info
+    - name: Get CloudFront Distribution ID using AWS CLI
+      ansible.builtin.shell: |
+        aws cloudformation describe-stack-resources \
+          --stack-name {{ STACK_NAME }} \
+          --region {{ AWS_REGION }} \
+          --logical-resource-id CloudFrontDistribution \
+          --query 'StackResources[0].PhysicalResourceId' \
+          --output text
+      environment:
+        AWS_ACCESS_KEY_ID: "{{ AWS_ACCESS_KEY_ID }}"
+        AWS_SECRET_ACCESS_KEY: "{{ AWS_SECRET_ACCESS_KEY }}"
+        AWS_DEFAULT_REGION: "{{ AWS_REGION }}"
+      register: distribution_id_result
+      changed_when: false
 
-    - name: Extract CloudFront Distribution ID from outputs
+    - name: Set distribution ID fact
       set_fact:
-        cloudfront_distribution_id: "{{ stack_info.stacks[0].outputs | selectattr('OutputKey', 'equalto', 'CloudFrontDistributionId') | map(attribute='OutputValue') | first }}"
-      when: stack_info.stacks | length > 0 and stack_info.stacks[0].outputs is defined
+        cloudfront_distribution_id: "{{ distribution_id_result.stdout }}"
 
     - name: Fail if distribution ID not found
       ansible.builtin.fail:
-        msg: "Could not find CloudFrontDistributionId in stack {{ STACK_NAME }} outputs. Make sure the stack is deployed and has outputs."
-      when: cloudfront_distribution_id is not defined
+        msg: "Could not find CloudFrontDistribution in stack {{ STACK_NAME }}"
+      when: cloudfront_distribution_id == "" or "None" in cloudfront_distribution_id
 
     - name: Create CloudFront invalidation
       community.aws.cloudfront_invalidation:
