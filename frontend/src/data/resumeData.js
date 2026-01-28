@@ -48,13 +48,13 @@ const resumeData = {
       projects: [
         {
           id: 4,
-          title: "AI-Powered Resume Builder",
+          title: "German Learning App",
           location: "Online",
           duration: "2024 — Present",
           details: [
-            "Built an HTML/CSS template-based resume generator using user-provided input.",
-            "Implemented template switching, PDF export, and mobile responsiveness.",
-            "Developed with vanilla JavaScript for performance and simplicity."
+            "Built a language-learning platform designed to help users practice German through structured exercises and intuitive feedback.",
+            "Implemented a comprehensive vocabulary and grammar learning system with spaced repetition and progress tracking.",
+            "Designed for extensibility with AI-driven features and integrations."
           ]
         },
         {

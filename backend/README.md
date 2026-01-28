@@ -1,3 +1,11 @@
+# Backend
+
+Build scripts and a "content management system" for server-side rendering and local development.
+
+## Overview
+
+The backend is a lightweight Python-based build system that handles server-side rendering of Markdown content into static HTML. It includes development tools for testing the visitor counter without touching AWS resources.
+
 ## Render Project Emulate Markdown
 
 For our project page we want to be able to render markdown.
@@ -19,7 +27,7 @@ eg. `/blog/:handle.markdown`
 ## Tasks runner with invoke
 
 I am using the task runner invoke and refactor the render_projects into render_items
-so it can render the projects and tbe blog.
+so it can render the projects and the blog.
 
 ```sh
 invoke --list
@@ -31,3 +39,7 @@ invoke render-projects
 For our synytax highlighting for our markdown we need to gererate the css.
 pip install Pygments
 pygmentize -S monokai -f html -a .codehilite > pygments.css
+
+## Counter
+
+Created 

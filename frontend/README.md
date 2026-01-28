@@ -47,6 +47,7 @@ This was the output
 
 ![Screenshot](./public/assets/lovable_output.png)
 
+**Note**: I decided to develop the frontend using react, so I only used Lovable to get design ideas. 
 
 ## Project Overview
 
