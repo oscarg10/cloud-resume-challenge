@@ -66,14 +66,42 @@ A modern, responsive portfolio website built with React and Vite, featuring a re
 
 ash
 
-# Install dependencies
+### Install dependencies
 npm install
 
-# Start development server
+### Start development server
 npm run dev
 
-# Build for production
+### Build for production
 npm run build
 
-# Preview production build
+### Preview production build
 npm run preview
+
+## Page Setup
+
+### Resume Page - Data 
+
+For now, since this is not a page that will be changed often, I decided to maintain it manually unlike the Blog and Projects pages which are generated from Markdown. I just modify the resumeData.js file in case I need to update any data. 
+
+For a production update, I just need to run the 'upload' bash script (run the ansible upload command).
+
+### Blog/Projects Pages 
+
+As mentioned above, these two pages are created and coverted from markdown files. Then, these files are converted into JSON files by running the following commands
+
+```cd backend
+
+# Generate projects JSON
+invoke render-projects
+
+# Generate blog JSON
+invoke render-blog
+
+# Or run both
+invoke render-projects && invoke render-blog``` 
+
+This will effectivelly read all .md files, extract the metadata, convert the md body into HTML and lastly create .json files. 
+
+Once this is done, the ansible upload.yml file must be run to get the changes into production. 
+

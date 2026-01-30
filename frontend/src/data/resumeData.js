@@ -48,17 +48,6 @@ const resumeData = {
       projects: [
         {
           id: 4,
-          title: "German Learning App",
-          location: "Online",
-          duration: "2024 — Present",
-          details: [
-            "Built a language-learning platform designed to help users practice German through structured exercises and intuitive feedback.",
-            "Implemented a comprehensive vocabulary and grammar learning system with spaced repetition and progress tracking.",
-            "Designed for extensibility with AI-driven features and integrations."
-          ]
-        },
-        {
-          id: 5,
           title: "Luck in Football",
           location: "Online",
           duration: "2025",
@@ -66,6 +55,17 @@ const resumeData = {
             "Built a Python pipeline using APIs, pandas, and automation loops for large-scale football datasets.",
             "Handled authentication, pagination, rate limits, and error logging for stable ingestion.",
             "Performed EDA and visualization with pandas and matplotlib."
+          ]
+        },
+        {
+          id: 5,
+          title: "German Learning App",
+          location: "Online",
+          duration: "2024",
+          details: [
+            "Built a language-learning platform designed to help users practice German through structured exercises and intuitive feedback.",
+            "Implemented a comprehensive vocabulary and grammar learning system with spaced repetition and progress tracking.",
+            "Designed for extensibility with AI-driven features and integrations."
           ]
         }
       ],
